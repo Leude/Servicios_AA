@@ -5,17 +5,7 @@ import java.util.Scanner;
 public class Pantalla {
 
     void menu() {
-        System.out.println("-----------------------------------------");
-        System.out.println("\t\t**Menu Principal**");
-        System.out.println("-----------------------------------------");
-        System.out.println("\t\tElije una opcion:");
-        System.out.println("- 1)Dar de Alta Articulos");
-        System.out.println("- 2)Modificar Articulos");
-        System.out.println("- 3)Eliminar Articulos");
-        System.out.println("- 4)Consultar Articulos Individualmente");
-        System.out.println("- 5)Generar Reporte");
-        System.out.println("- 6)Salir");
-        System.out.println("-------------------------------");
+       
     }
 
     public void mostrarMensaje(String msg) {
