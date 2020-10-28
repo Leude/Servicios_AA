@@ -20,7 +20,7 @@ public class SQL {
         ods.setPassword("GetStarted18c"); 
         Connection conn = ods.getConnection();
 
-        PreparedStatement stmt = conn.prepareStatement("SELECT 'Hello World!' FROM dual"); //probando 1234
+        PreparedStatement stmt = conn.prepareStatement("SELECT 'Hello World!' FROM dual"); //probando 12345
         ResultSet rslt = stmt.executeQuery();
         while (rslt.next()) {
             System.out.println(rslt.getString(1));
