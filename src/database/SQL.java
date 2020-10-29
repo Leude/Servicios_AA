@@ -1,3 +1,4 @@
+//Futura interfaz del proyecto
 package database;
 
 import java.sql.Connection;
