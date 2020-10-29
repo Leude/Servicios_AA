@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package database;
 
 import java.sql.Connection;
@@ -20,7 +15,7 @@ public class SQL {
         ods.setPassword("GetStarted18c"); 
         Connection conn = ods.getConnection();
 
-        PreparedStatement stmt = conn.prepareStatement("SELECT 'Hello World!' FROM dual"); //otra prueba de modificacion
+        PreparedStatement stmt = conn.prepareStatement("SELECT 'Hello World!' FROM dual");
         ResultSet rslt = stmt.executeQuery();
         while (rslt.next()) {
             System.out.println(rslt.getString(1));
