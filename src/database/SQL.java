@@ -15,7 +15,6 @@ public class SQL {
         ods.setUser("sistema"); 
         ods.setPassword("GetStarted18c"); 
         Connection conn = ods.getConnection();
-
         PreparedStatement stmt = conn.prepareStatement("SELECT 'Hello World!' FROM dual");
         ResultSet rslt = stmt.executeQuery();
         while (rslt.next()) {
