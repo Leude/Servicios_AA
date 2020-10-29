@@ -1,6 +1,6 @@
 //Futura interfaz del proyecto
 package database;
-
+//puede cambiarse a import java.sql.*
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
