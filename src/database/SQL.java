@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import oracle.jdbc.pool.OracleDataSource;
 
 public class SQL {
-//Todavia en proceso de programar
+//Todavia en proceso de programar 123
     public void abrir() throws SQLException {
         OracleDataSource ods = new OracleDataSource();
         ods.setURL("jdbc:oracle:thin:@//localhost:1521/XEPDB1"); 
