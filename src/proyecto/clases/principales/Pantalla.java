@@ -1,4 +1,4 @@
-package servicios_aa;
+package proyecto.clases.principales;
 
 import java.util.Scanner;
 

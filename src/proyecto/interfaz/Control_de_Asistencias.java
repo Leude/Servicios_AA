@@ -1,4 +1,4 @@
-package interfaces;
+package proyecto.interfaz;
 
 public class Control_de_Asistencias extends javax.swing.JFrame {
 

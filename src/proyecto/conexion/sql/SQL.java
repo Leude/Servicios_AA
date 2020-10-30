@@ -1,5 +1,5 @@
 //Futura interfaz del proyecto
-package database;
+package proyecto.conexion.sql;
 
 import java.sql.*;
 import oracle.jdbc.pool.OracleDataSource;
@@ -9,9 +9,9 @@ public class SQL {
 
     public void abrir() throws SQLException {
         OracleDataSource ods = new OracleDataSource();
-        ods.setURL("jdbc:oracle:thin:@//localhost:1521/XEPDB1");
-        ods.setUser("sistema");
-        ods.setPassword("GetStarted18c");
+        ods.setURL("jdbc:oracle:thin:@//Ricardo:1521/XEPDB1");
+        ods.setUser("");
+        ods.setPassword("");
         Connection conn = ods.getConnection();
         PreparedStatement stmt = conn.prepareStatement("SELECT 'Hello World!' FROM dual");
         ResultSet rslt = stmt.executeQuery();

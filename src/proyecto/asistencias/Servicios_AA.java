@@ -1,4 +1,7 @@
-package servicios_aa;
+package proyecto.asistencias;
+
+import proyecto.clases.principales.Controlador;
+import proyecto.clases.principales.Pantalla;
 
 public class Servicios_AA {
    public static void main(String args[]){
