@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import oracle.jdbc.pool.OracleDataSource;
 
-public abstract class Conexion {
+public class Conexion {
 
     protected Connection conn;
     boolean estado;
@@ -31,6 +31,5 @@ public abstract class Conexion {
         return conn;
     }
 
-    public abstract void insertarTabla();
-
+    
 }
