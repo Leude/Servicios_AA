@@ -1,12 +1,16 @@
 package proyecto.clases.principales;
+
+import proyecto.clases.conexion.DepartamentoBD;
+
 public class Controlador {
-    private final Pantalla vista= new Pantalla();
-    
+
     public Controlador() {
+
+    }
+
+    public void iniciar() {
+
     }
 
     
-    public void iniciar(){
-      
-    }
 }
