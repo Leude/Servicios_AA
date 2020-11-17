@@ -1,6 +1,6 @@
 package proyecto.main;
 
-import jfram.clases.LoginSistema;
+import proyecto.vista.LoginSistema;
 
 public class ControlDeAsistencias {
 
