@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package proyecto.pantalla;
+package jfram.clases;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Sammy Guergachi <sguergachi at gmail.com>
- */
 public class MenuPrincipal extends javax.swing.JFrame {
 
     public MenuPrincipal() {
@@ -103,63 +94,75 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         salir.setText("Salir");
+        salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(empleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(departamentos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sucursales, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(turnos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(asignacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(reporte_empleados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(reporte_asistencias, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(control_asistencias, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(reporte_sucursales, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(76, 76, 76))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(273, 273, 273)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sucursales)
-                            .addComponent(departamentos)
-                            .addComponent(turnos)
-                            .addComponent(asignacion)
-                            .addComponent(control_asistencias)
-                            .addComponent(reporte_asistencias)
-                            .addComponent(reporte_sucursales)
-                            .addComponent(reporte_empleados)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel1)
-                                .addComponent(empleados))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(salir)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(salir))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel1)
-                .addGap(47, 47, 47)
-                .addComponent(empleados)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(empleados)
+                    .addComponent(control_asistencias))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(sucursales))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(reporte_asistencias)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(departamentos)
+                        .addGap(18, 18, 18)
+                        .addComponent(turnos))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(reporte_empleados)))
                 .addGap(18, 18, 18)
-                .addComponent(sucursales)
-                .addGap(18, 18, 18)
-                .addComponent(departamentos)
-                .addGap(18, 18, 18)
-                .addComponent(turnos)
-                .addGap(18, 18, 18)
-                .addComponent(asignacion)
-                .addGap(18, 18, 18)
-                .addComponent(control_asistencias)
-                .addGap(18, 18, 18)
-                .addComponent(reporte_asistencias)
-                .addGap(18, 18, 18)
-                .addComponent(reporte_sucursales)
-                .addGap(18, 18, 18)
-                .addComponent(reporte_empleados)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(asignacion)
+                    .addComponent(reporte_sucursales))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(salir)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(48, 48, 48))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(350, 567));
+        setSize(new java.awt.Dimension(718, 448));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -168,13 +171,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_empleadosActionPerformed
 
     private void empleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empleadosMouseClicked
-        MenuFormularioEmpleado mfe = new MenuFormularioEmpleado();
+        EmpleadoFormularios mfe = new EmpleadoFormularios();
         mfe.setVisible(true);
         dispose();
     }//GEN-LAST:event_empleadosMouseClicked
 
     private void turnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turnosActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_turnosActionPerformed
 
     private void asignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignacionActionPerformed
@@ -186,16 +189,28 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_reporte_empleadosActionPerformed
 
     private void sucursalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sucursalesMouseClicked
-        // TODO add your handling code here:
+        EmpleadoFormularios mfe = new EmpleadoFormularios();
+        mfe.setVisible(true);
+        dispose();
     }//GEN-LAST:event_sucursalesMouseClicked
 
     private void departamentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_departamentosMouseClicked
-        // TODO add your handling code here:
+        EmpleadoFormularios mfe = new EmpleadoFormularios();
+        mfe.setVisible(true);
+        dispose();
     }//GEN-LAST:event_departamentosMouseClicked
 
     private void turnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_turnosMouseClicked
-        // TODO add your handling code here:
+        EmpleadoFormularios mfe = new EmpleadoFormularios();
+        mfe.setVisible(true);
+        dispose();
     }//GEN-LAST:event_turnosMouseClicked
+
+    private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
+        LoginSistema login = new LoginSistema();
+        login.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_salirMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import proyecto.clases.principales.Empleado;
 import proyecto.conexion.Conexion;
 
@@ -17,30 +18,32 @@ public class EmpleadoBD extends Conexion {
             pst.setString(2, empleado.getPrimer_apellido());
             pst.setString(3, empleado.getSegundo_apellido());
             pst.executeQuery();
+            JOptionPane.showMessageDialog(null, "Usuario Registrado Correctamente");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            System.out.println("Error en Ingresar datos");
+            JOptionPane.showMessageDialog(null, "Error, complete los campos");
         }
     }
 
     //buscar datos
-    public Empleado consultaEmpleado(int id_empleado) {
-        Empleado empleado = null;
+    public ArrayList<Empleado> consultaEmpleado(int id_empleado) {
+        ArrayList<Empleado> listaEmpleados = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM EMPLEADO WHERE ID_EMPLEADO= " + id_empleado);
+            ResultSet rs = st.executeQuery("SELECT * FROM empleado where id_empleado = "+id_empleado);
             while (rs.next()) {
-                empleado = new Empleado();
+                Empleado empleado = new Empleado();
                 empleado.setId_empleado(rs.getInt("ID_EMPLEADO"));
                 empleado.setNombre(rs.getString("NOMBRE"));
                 empleado.setPrimer_apellido(rs.getString("PRIMER_APELLIDO"));
                 empleado.setSegundo_apellido(rs.getString("SEGUNDO_APELLIDO"));
+                listaEmpleados.add(empleado);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            System.out.println("Error en Consulatar Datos");
+            JOptionPane.showMessageDialog(null, "Error, no se pudo hacer la consulta");
         }
-        return empleado;
+        return listaEmpleados;
     }
 
     public void cambioEmpleado(Empleado empleado, int id_empleado) {
@@ -51,9 +54,10 @@ public class EmpleadoBD extends Conexion {
             pst.setString(3, empleado.getSegundo_apellido());
             pst.setInt(4, id_empleado);
             pst.executeQuery();
+            JOptionPane.showMessageDialog(null, "Datos del Empleado Cambiados con Exito");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            System.out.println("Error en Cambiar Datos");
+           JOptionPane.showMessageDialog(null, "Error, ingrese correctamente los datos");
         }
     }
 
@@ -63,18 +67,19 @@ public class EmpleadoBD extends Conexion {
             PreparedStatement pst = conn.prepareStatement("DELETE FROM EMPLEADO WHERE ID_EMPLEADO=?");
             pst.setInt(1, id_empleado);
             pst.executeQuery();
+            JOptionPane.showMessageDialog(null, "Se eliminaron correctamente: ");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            System.out.println("Error en borrar Datos");
+            JOptionPane.showMessageDialog(null, "Error, ingrese los datos correctamente");
         }
     }
 //PARA LISTAR TODOS LOS EMPLEADO DE LA BASE DE DATOS
 
-    public ArrayList<Empleado> listarEmpleados() {
+    public ArrayList<Empleado> listarTodosLosEmpleados() {
         ArrayList<Empleado> listaEmpleados = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT ID_EMPLEADO,NOMBRE, PRIMER_APELLIDO, SEGUNDO_APELLIDO FROM EMPLEADO");
+            ResultSet rs = st.executeQuery("SELECT * FROM EMPLEADO ORDER BY id_empleado ");
             while (rs.next()) {
                 Empleado empleado = new Empleado();
                 empleado.setId_empleado(rs.getInt("ID_EMPLEADO"));
@@ -85,7 +90,7 @@ public class EmpleadoBD extends Conexion {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println("Error en Listado");
+            JOptionPane.showMessageDialog(null, "Error, no se pudo Listar ");
         }
         return listaEmpleados;
     }

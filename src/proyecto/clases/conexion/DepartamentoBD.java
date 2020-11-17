@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import proyecto.clases.principales.Departamento;
 import proyecto.conexion.Conexion;
 
-public class DepartamentoBD extends Conexion {
+public class DepartamentoBD extends Conexion{
 
     public void altaDepartamento(Departamento departamento) {
         try {

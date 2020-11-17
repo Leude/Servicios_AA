@@ -1,4 +1,4 @@
-package proyecto.pantalla;
+package jfram.clases;
 
 import javax.swing.JOptionPane;
 
@@ -44,6 +44,7 @@ public class LoginSistema extends javax.swing.JFrame {
         jTextField1.setBackground(new java.awt.Color(58, 82, 86));
         jTextField1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(179, 177, 177));
+        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -58,6 +59,7 @@ public class LoginSistema extends javax.swing.JFrame {
         jPasswordField1.setBackground(new java.awt.Color(58, 82, 86));
         jPasswordField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(179, 177, 177));
+        jPasswordField1.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N

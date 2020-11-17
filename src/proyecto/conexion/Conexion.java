@@ -4,13 +4,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import oracle.jdbc.pool.OracleDataSource;
 
-public class Conexion {
-    private String url="jdbc:oracle:thin:@//Ricardo:1521/XEPDB1";
-    private String user= "CA";
-    private String password="123";
-    protected Connection conn;
-
-    public void abrirConexionSQL() {
+public abstract class Conexion {
+    private static final String url="jdbc:oracle:thin:@//localhost:1521/XEPDB1";
+    private static final String user= "CA";
+    private static final String password="123";
+    protected static Connection conn;
+ 
+    public Conexion() {
         try {
             OracleDataSource ods = new OracleDataSource();
             ods.setURL(url); // jdbc:oracle:thin@//[nombre de host]:[puerto]/[nombre de servicio BD]
