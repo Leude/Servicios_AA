@@ -1,4 +1,4 @@
-package jfram.clases;
+package proyecto.vista;
 
 import javax.swing.JOptionPane;
 

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package jfram.clases;
+package proyecto.vista;
 
 import proyecto.clases.conexion.EmpleadoBD;
 
