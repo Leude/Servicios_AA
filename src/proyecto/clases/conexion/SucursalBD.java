@@ -5,48 +5,54 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import proyecto.clases.principales.Sucursal;
 import proyecto.conexion.Conexion;
 
-public class SucursalBD extends Conexion{
+public class SucursalBD extends Conexion {
 
     public void altaSucursal(Sucursal sucursal) {
         try {
             PreparedStatement pst = conn.prepareStatement("INSERT INTO SUCURSAL(NOMBRE_SUCURSAL) VALUES(?)");
-            pst.setString(1, sucursal.getNombre_sucursal());
+            pst.setString(1, sucursal.getNombre());
             pst.executeQuery();
+            JOptionPane.showMessageDialog(null, "Usuario Registrado Correctamente");
+
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            System.out.println("Error en ingresar datos del sucursal");
+            JOptionPane.showMessageDialog(null, "Error, complete los campos");
         }
     }
 
-    public Sucursal consultaSucursal(int id_sucursal) {
-        Sucursal sucursal = null;
+    public ArrayList<Sucursal> consultaSucursal(int id_sucursal) {
+        ArrayList<Sucursal> listaSucursales = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM SUCURSAL WHERE ID_SUCURSAL = " + id_sucursal);
             while (rs.next()) {
-                sucursal = new Sucursal();
+                Sucursal sucursal = new Sucursal();
                 sucursal.setId_sucursal(rs.getInt("ID_SUCURSAL"));
-                sucursal.setNombre_sucursal(rs.getString("NOMBRE_SUCURSAL"));
+                sucursal.setNombre(rs.getString("NOMBRE_SUCURSAL"));
+                listaSucursales.add(sucursal);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            System.out.println("Error en buscar datos del sucursal");
+            JOptionPane.showMessageDialog(null, "Error, no se pudo hacer la consulta");
         }
-        return sucursal;
+        return listaSucursales;
     }
 
     public void cambioSucursal(Sucursal sucursal, int id_sucursal) {
         try {
             PreparedStatement pst = conn.prepareStatement("UPDATE SUCURSAL SET NOMBRE_SUCURSAL=? WHERE ID_SUCURSAL=?");
-            pst.setString(1, sucursal.getNombre_sucursal());
+            pst.setString(1, sucursal.getNombre());
             pst.setInt(2, id_sucursal);
             pst.executeQuery();
+            JOptionPane.showMessageDialog(null, "Datos del Empleado Cambiados con Exito");
+
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            System.out.println("Error en actualizar datos del sucursal");
+            JOptionPane.showMessageDialog(null, "Error, ingrese correctamente los datos");
         }
     }
 
@@ -56,14 +62,16 @@ public class SucursalBD extends Conexion{
             PreparedStatement pst = conn.prepareStatement("DELETE FROM SUCURSAL WHERE ID_SUCURSAL=?");
             pst.setInt(1, id_sucursal);
             pst.executeQuery();
+            JOptionPane.showMessageDialog(null, "Se eliminaron correctamente: ");
+
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            System.out.println("Error en la eliminacion del sucursal");
+            JOptionPane.showMessageDialog(null, "Error, ingrese los datos correctamente");
         }
     }
 
-    public ArrayList<Sucursal> listarSucursals() {
-        ArrayList<Sucursal> listaSucursals = new ArrayList<>();
+    public ArrayList<Sucursal> listarTodasLasSucursales() {
+        ArrayList<Sucursal> listaSucursales = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT ID_SUCURSAL,NOMBRE_SUCURSAL "
@@ -71,13 +79,13 @@ public class SucursalBD extends Conexion{
             while (rs.next()) {
                 Sucursal sucursal = new Sucursal();
                 sucursal.setId_sucursal(rs.getInt("ID_SUCURSAL"));
-                sucursal.setNombre_sucursal(rs.getString("NOMBRE_SUCURSAL"));
-                listaSucursals.add(sucursal);
+                sucursal.setNombre(rs.getString("NOMBRE_SUCURSAL"));
+                listaSucursales.add(sucursal);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println("Error en listar los datos de los sucursal");
+            JOptionPane.showMessageDialog(null, "Error, no se pudo Listar ");
         }
-        return listaSucursals;
+        return listaSucursales;
     }
 }

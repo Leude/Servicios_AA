@@ -1,14 +1,13 @@
 package proyecto.clases.principales;
 
-import java.sql.Date;
-
 public class Turno {
 
     private String id_turno;
-    private Date hora_inicial;
-    private Date hora_final;
+    private String hora_inicial;
+    private String hora_final;
 
     public Turno() {
+
     }
 
     public String getId_turno() {
@@ -17,21 +16,22 @@ public class Turno {
 
     public void setId_turno(String id_turno) {
         this.id_turno = id_turno;
+
     }
 
-    public Date getHora_inicial() {
+    public String getHora_inicial() {
         return hora_inicial;
     }
 
-    public void setHora_inicial(Date hora_inicial) {
+    public void setHora_inicial(String hora_inicial) {
         this.hora_inicial = hora_inicial;
     }
 
-    public Date getHora_final() {
+    public String getHora_final() {
         return hora_final;
     }
 
-    public void setHora_final(Date hora_final) {
+    public void setHora_final(String hora_final) {
         this.hora_final = hora_final;
     }
 

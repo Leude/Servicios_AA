@@ -1,7 +1,9 @@
 package proyecto.clases.principales;
+
 public class Sucursal {
+
     private int id_sucursal;
-    private String nombre_sucursal;
+    private String nombre;
 
     public Sucursal() {
     }
@@ -14,12 +16,11 @@ public class Sucursal {
         this.id_sucursal = id_sucursal;
     }
 
-    public String getNombre_sucursal() {
-        return nombre_sucursal;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombre_sucursal(String nombre_sucursal) {
-        this.nombre_sucursal = nombre_sucursal;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    
 }

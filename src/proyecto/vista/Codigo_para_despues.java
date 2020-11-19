@@ -13,7 +13,8 @@ import proyecto.clases.conexion.EmpleadoBD;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class Codigo_para_despues {
-    /*EmpleadoBD ebd = new EmpleadoBD();
+    /**
+    EmpleadoBD ebd = new EmpleadoBD();
 
     public Codigo_para_despues() {
         ebd.abrirConexionSQL();
@@ -28,5 +29,7 @@ public class Codigo_para_despues {
     
     convertir un texto a entero
     Integer.parseInt(dato_num_empleado.getText())
-    }*/
+    turno.setHora_inicial(new java.sql.Date(dato_hora_inicial_registro.getDate().getTime()));
+    }
+    **/
 }

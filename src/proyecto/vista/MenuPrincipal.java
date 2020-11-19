@@ -189,19 +189,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_reporte_empleadosActionPerformed
 
     private void sucursalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sucursalesMouseClicked
-        EmpleadoFormularios mfe = new EmpleadoFormularios();
+        SucursalFormularios mfe = new SucursalFormularios();
         mfe.setVisible(true);
         dispose();
     }//GEN-LAST:event_sucursalesMouseClicked
 
     private void departamentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_departamentosMouseClicked
-        EmpleadoFormularios mfe = new EmpleadoFormularios();
+        DepartamentoFormularios mfe = new DepartamentoFormularios();
         mfe.setVisible(true);
         dispose();
     }//GEN-LAST:event_departamentosMouseClicked
 
     private void turnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_turnosMouseClicked
-        EmpleadoFormularios mfe = new EmpleadoFormularios();
+        TurnoFormularios mfe = new TurnoFormularios();
         mfe.setVisible(true);
         dispose();
     }//GEN-LAST:event_turnosMouseClicked
