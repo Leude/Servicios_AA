@@ -17,13 +17,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         sucursales = new javax.swing.JButton();
         turnos = new javax.swing.JButton();
         departamentos = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         asignacion = new javax.swing.JButton();
         control_asistencias = new javax.swing.JButton();
         reporte_asistencias = new javax.swing.JButton();
         reporte_sucursales = new javax.swing.JButton();
         reporte_empleados = new javax.swing.JButton();
         salir = new javax.swing.JButton();
+        encabezado = new javax.swing.JPanel();
+        titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 255));
@@ -69,11 +70,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel1.setText(" Menu");
-
         asignacion.setText("-¬ Formularios de asignacion");
+        asignacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                asignacionMouseClicked(evt);
+            }
+        });
         asignacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 asignacionActionPerformed(evt);
@@ -100,6 +102,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        encabezado.setBackground(new java.awt.Color(20, 52, 75));
+
+        titulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        titulo.setForeground(new java.awt.Color(255, 255, 255));
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("Menu");
+        titulo.setAlignmentY(0.0F);
+        titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout encabezadoLayout = new javax.swing.GroupLayout(encabezado);
+        encabezado.setLayout(encabezadoLayout);
+        encabezadoLayout.setHorizontalGroup(
+            encabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(encabezadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        encabezadoLayout.setVerticalGroup(
+            encabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(encabezadoLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(titulo)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -121,17 +149,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(76, 76, 76))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(273, 273, 273)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(salir))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(salir)
+                .addContainerGap(376, Short.MAX_VALUE))
+            .addComponent(encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addComponent(encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(empleados)
                     .addComponent(control_asistencias))
@@ -212,19 +238,27 @@ public class MenuPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_salirMouseClicked
 
+    private void asignacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignacionMouseClicked
+        AsignacionFormulario af = new AsignacionFormulario();
+        af.setVisible(true);
+        dispose();
+                
+    }//GEN-LAST:event_asignacionMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton asignacion;
     private javax.swing.JButton control_asistencias;
     private javax.swing.JButton departamentos;
     private javax.swing.JButton empleados;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel encabezado;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton reporte_asistencias;
     private javax.swing.JButton reporte_empleados;
     private javax.swing.JButton reporte_sucursales;
     private javax.swing.JButton salir;
     private javax.swing.JButton sucursales;
+    private javax.swing.JLabel titulo;
     private javax.swing.JButton turnos;
     // End of variables declaration//GEN-END:variables
 }
