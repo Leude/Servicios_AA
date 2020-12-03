@@ -13,8 +13,9 @@ public class SucursalBD extends Conexion {
 
     public void altaSucursal(Sucursal sucursal) {
         try {
-            PreparedStatement pst = conn.prepareStatement("INSERT INTO SUCURSAL(NOMBRE_SUCURSAL) VALUES(?)");
+            PreparedStatement pst = conn.prepareStatement("INSERT INTO SUCURSAL(NOMBRE,DIRECCION) VALUES(?,?)");
             pst.setString(1, sucursal.getNombre());
+            pst.setString(2, sucursal.getDireccion());
             pst.executeQuery();
             JOptionPane.showMessageDialog(null, "Usuario Registrado Correctamente");
 
@@ -24,29 +25,12 @@ public class SucursalBD extends Conexion {
         }
     }
 
-    public ArrayList<Sucursal> consultaSucursal(int id_sucursal) {
-        ArrayList<Sucursal> listaSucursales = new ArrayList<>();
+    public void cambioSucursal(Sucursal sucursal, Object id_sucursal) {
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM SUCURSAL WHERE ID_SUCURSAL = " + id_sucursal);
-            while (rs.next()) {
-                Sucursal sucursal = new Sucursal();
-                sucursal.setId_sucursal(rs.getInt("ID_SUCURSAL"));
-                sucursal.setNombre(rs.getString("NOMBRE_SUCURSAL"));
-                listaSucursales.add(sucursal);
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-            JOptionPane.showMessageDialog(null, "Error, no se pudo hacer la consulta");
-        }
-        return listaSucursales;
-    }
-
-    public void cambioSucursal(Sucursal sucursal, int id_sucursal) {
-        try {
-            PreparedStatement pst = conn.prepareStatement("UPDATE SUCURSAL SET NOMBRE_SUCURSAL=? WHERE ID_SUCURSAL=?");
+            PreparedStatement pst = conn.prepareStatement("UPDATE SUCURSAL SET NOMBRE=?,DIRECCION=? WHERE ID_SUCURSAL=?");
             pst.setString(1, sucursal.getNombre());
-            pst.setInt(2, id_sucursal);
+            pst.setString(2, sucursal.getDireccion());
+            pst.setObject(3, id_sucursal);
             pst.executeQuery();
             JOptionPane.showMessageDialog(null, "Datos del Empleado Cambiados con Exito");
 
@@ -57,10 +41,10 @@ public class SucursalBD extends Conexion {
     }
 
     //Eliminar datos de la DB
-    public void bajaSucursal(int id_sucursal) {
+    public void bajaSucursal(Object id_sucursal) {
         try {
             PreparedStatement pst = conn.prepareStatement("DELETE FROM SUCURSAL WHERE ID_SUCURSAL=?");
-            pst.setInt(1, id_sucursal);
+            pst.setObject(1, id_sucursal);
             pst.executeQuery();
             JOptionPane.showMessageDialog(null, "Se eliminaron correctamente: ");
 
@@ -74,12 +58,32 @@ public class SucursalBD extends Conexion {
         ArrayList<Sucursal> listaSucursales = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT ID_SUCURSAL,NOMBRE_SUCURSAL "
-                    + "FROM SUCURSAL");
+            ResultSet rs = st.executeQuery("SELECT ID_SUCURSAL,NOMBRE,DIRECCION FROM SUCURSAL");
             while (rs.next()) {
                 Sucursal sucursal = new Sucursal();
                 sucursal.setId_sucursal(rs.getInt("ID_SUCURSAL"));
-                sucursal.setNombre(rs.getString("NOMBRE_SUCURSAL"));
+                sucursal.setNombre(rs.getString("NOMBRE"));
+                sucursal.setDireccion(rs.getString("DIRECCION"));
+                listaSucursales.add(sucursal);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error, no se pudo Listar ");
+        }
+        return listaSucursales;
+    }
+
+    public ArrayList<Sucursal> listarBusquedaDeSucursales(String bus) {
+        String sql = "SELECT * FROM SUCURSAL WHERE ID_SUCURSAL LIKE '%" + bus + "%' OR UPPER(NOMBRE) LIKE UPPER('%" + bus + "%') ORDER BY ID_SUCURSAL";
+        ArrayList<Sucursal> listaSucursales = new ArrayList<>();
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                Sucursal sucursal = new Sucursal();
+                sucursal.setId_sucursal(rs.getInt("ID_SUCURSAL"));
+                sucursal.setNombre(rs.getString("NOMBRE"));
+                sucursal.setDireccion(rs.getString("DIRECCION"));
                 listaSucursales.add(sucursal);
             }
         } catch (SQLException e) {

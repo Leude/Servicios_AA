@@ -1,9 +1,47 @@
 package proyecto.clases.principales;
+
 public class Empleado {
+
     private String nombre;
     private String primer_apellido;
     private String segundo_apellido;
     private int id_empleado;
+    private String clave;
+    private String telefono;
+    private String correo;
+    private String direccion;
+
+    public String getClave() {
+        return clave;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
 
     public String getNombre() {
         return nombre;
@@ -37,7 +75,9 @@ public class Empleado {
         this.id_empleado = id_empleado;
     }
 
-   
+    @Override
+    public String toString() {
+        return "Empleado{" + "nombre=" + nombre + '}';
+    }
     
 }
- 

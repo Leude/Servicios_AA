@@ -1,7 +1,5 @@
 package proyecto.vista;
 
-import javax.swing.JOptionPane;
-
 public class MenuPrincipal extends javax.swing.JFrame {
 
     public MenuPrincipal() {
@@ -33,11 +31,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(81, 96, 115));
 
         empleados.setText("-¬ Formularios para empleados");
-        empleados.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                empleadosMouseClicked(evt);
-            }
-        });
         empleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 empleadosActionPerformed(evt);
@@ -45,18 +38,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         sucursales.setText("-¬ Formularios para sucursales");
-        sucursales.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sucursalesMouseClicked(evt);
+        sucursales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sucursalesActionPerformed(evt);
             }
         });
 
         turnos.setText("-¬ Formularios para turnos");
-        turnos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                turnosMouseClicked(evt);
-            }
-        });
         turnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 turnosActionPerformed(evt);
@@ -64,18 +52,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         departamentos.setText("-¬ Formularios para departamentos");
-        departamentos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                departamentosMouseClicked(evt);
+        departamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                departamentosActionPerformed(evt);
             }
         });
 
         asignacion.setText("-¬ Formularios de asignacion");
-        asignacion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                asignacionMouseClicked(evt);
-            }
-        });
         asignacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 asignacionActionPerformed(evt);
@@ -83,6 +66,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         control_asistencias.setText("| ° | Control de asistencia");
+        control_asistencias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                control_asistenciasActionPerformed(evt);
+            }
+        });
 
         reporte_asistencias.setText("| ° | Reporte de asistencia");
 
@@ -193,44 +181,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void empleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empleadosActionPerformed
-        // TODO add your handling code here:
+        FormularioEmpleado fe = new FormularioEmpleado();
+        fe.setVisible(true);
+        dispose();
     }//GEN-LAST:event_empleadosActionPerformed
 
-    private void empleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empleadosMouseClicked
-        EmpleadoFormularios mfe = new EmpleadoFormularios();
-        mfe.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_empleadosMouseClicked
-
     private void turnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turnosActionPerformed
-
+        FormularioTurno ft = new FormularioTurno();
+        ft.setVisible(true);
+        dispose();
     }//GEN-LAST:event_turnosActionPerformed
 
     private void asignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignacionActionPerformed
-        // TODO add your handling code here:
+        FormularioAsignacion fa = new FormularioAsignacion();
+        fa.setVisible(true);
+        dispose();
     }//GEN-LAST:event_asignacionActionPerformed
 
     private void reporte_empleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporte_empleadosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_reporte_empleadosActionPerformed
-
-    private void sucursalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sucursalesMouseClicked
-        SucursalFormularios mfe = new SucursalFormularios();
-        mfe.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_sucursalesMouseClicked
-
-    private void departamentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_departamentosMouseClicked
-        DepartamentoFormularios mfe = new DepartamentoFormularios();
-        mfe.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_departamentosMouseClicked
-
-    private void turnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_turnosMouseClicked
-        TurnoFormularios mfe = new TurnoFormularios();
-        mfe.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_turnosMouseClicked
 
     private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
         LoginSistema login = new LoginSistema();
@@ -238,12 +208,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_salirMouseClicked
 
-    private void asignacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignacionMouseClicked
-        AsignacionFormulario af = new AsignacionFormulario();
-        af.setVisible(true);
+    private void sucursalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sucursalesActionPerformed
+        FormularioSucursal fs = new FormularioSucursal();
+        fs.setVisible(true);
         dispose();
-                
-    }//GEN-LAST:event_asignacionMouseClicked
+    }//GEN-LAST:event_sucursalesActionPerformed
+
+    private void departamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departamentosActionPerformed
+        FormularioDepartamento fd = new FormularioDepartamento();
+        fd.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_departamentosActionPerformed
+
+    private void control_asistenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_control_asistenciasActionPerformed
+        SistemaAsistencia sa = new SistemaAsistencia();
+        sa.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_control_asistenciasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

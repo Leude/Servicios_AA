@@ -6,10 +6,6 @@ public class Turno {
     private String hora_inicial;
     private String hora_final;
 
-    public Turno() {
-
-    }
-
     public String getId_turno() {
         return id_turno;
     }
@@ -35,4 +31,10 @@ public class Turno {
         this.hora_final = hora_final;
     }
 
+    @Override
+    public String toString() {
+        return "Turno{" + "id_turno=" + id_turno + '}';
+    }
+    
+    
 }

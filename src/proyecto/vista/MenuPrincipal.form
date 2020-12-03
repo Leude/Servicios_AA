@@ -120,7 +120,6 @@
             <Property name="text" type="java.lang.String" value="-&#xac; Formularios para empleados"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="empleadosMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="empleadosActionPerformed"/>
           </Events>
         </Component>
@@ -129,7 +128,7 @@
             <Property name="text" type="java.lang.String" value="-&#xac; Formularios para sucursales"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sucursalesMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sucursalesActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="turnos">
@@ -137,7 +136,6 @@
             <Property name="text" type="java.lang.String" value="-&#xac; Formularios para turnos"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="turnosMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="turnosActionPerformed"/>
           </Events>
         </Component>
@@ -146,7 +144,7 @@
             <Property name="text" type="java.lang.String" value="-&#xac; Formularios para departamentos"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="departamentosMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="departamentosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="asignacion">
@@ -154,7 +152,6 @@
             <Property name="text" type="java.lang.String" value="-&#xac; Formularios de asignacion"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="asignacionMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="asignacionActionPerformed"/>
           </Events>
         </Component>
@@ -162,6 +159,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="| &#xb0; | Control de asistencia"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="control_asistenciasActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="reporte_asistencias">
           <Properties>

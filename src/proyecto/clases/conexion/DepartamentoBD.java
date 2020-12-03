@@ -13,40 +13,23 @@ public class DepartamentoBD extends Conexion {
 
     public void altaDepartamento(Departamento departamento) {
         try {
-            PreparedStatement pst = conn.prepareStatement("INSERT INTO DEPARTAMENTO(NOMBRE_DEPARTAMENTO) VALUES(?)");
+            PreparedStatement pst = conn.prepareStatement("INSERT INTO DEPARTAMENTO(NOMBRE,DIRECCION) VALUES(?,?)");
             pst.setString(1, departamento.getNombre());
+            pst.setString(2, departamento.getDireccion());
             pst.executeQuery();
             JOptionPane.showMessageDialog(null, "Usuario Registrado Correctamente");
-
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             JOptionPane.showMessageDialog(null, "Error, complete los campos");
         }
     }
 
-    public ArrayList<Departamento> consultaDepartamento(int id_departamento) {
-        ArrayList<Departamento> listaDepartamentoes = new ArrayList<>();
+    public void cambioDepartamento(Departamento departamento, Object id_departamento) {
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM DEPARTAMENTO WHERE ID_DEPARTAMENTO = " + id_departamento);
-            while (rs.next()) {
-                Departamento departamento = new Departamento();
-                departamento.setId_departamento(rs.getInt("ID_DEPARTAMENTO"));
-                departamento.setNombre(rs.getString("NOMBRE_DEPARTAMENTO"));
-                listaDepartamentoes.add(departamento);
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-            JOptionPane.showMessageDialog(null, "Error, no se pudo hacer la consulta");
-        }
-        return listaDepartamentoes;
-    }
-
-    public void cambioDepartamento(Departamento departamento, int id_departamento) {
-        try {
-            PreparedStatement pst = conn.prepareStatement("UPDATE DEPARTAMENTO SET NOMBRE_DEPARTAMENTO=? WHERE ID_DEPARTAMENTO=?");
+            PreparedStatement pst = conn.prepareStatement("UPDATE DEPARTAMENTO SET NOMBRE=?,DIRECCION=? WHERE ID_DEPARTAMENTO=?");
             pst.setString(1, departamento.getNombre());
-            pst.setInt(2, id_departamento);
+            pst.setString(2, departamento.getDireccion());
+            pst.setObject(3, id_departamento);
             pst.executeQuery();
             JOptionPane.showMessageDialog(null, "Datos del Empleado Cambiados con Exito");
 
@@ -57,10 +40,10 @@ public class DepartamentoBD extends Conexion {
     }
 
     //Eliminar datos de la DB
-    public void bajaDepartamento(int id_departamento) {
+    public void bajaDepartamento(Object id_departamento) {
         try {
             PreparedStatement pst = conn.prepareStatement("DELETE FROM DEPARTAMENTO WHERE ID_DEPARTAMENTO=?");
-            pst.setInt(1, id_departamento);
+            pst.setObject(1, id_departamento);
             pst.executeQuery();
             JOptionPane.showMessageDialog(null, "Se eliminaron correctamente: ");
 
@@ -74,12 +57,32 @@ public class DepartamentoBD extends Conexion {
         ArrayList<Departamento> listaDepartamentoes = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT ID_DEPARTAMENTO,NOMBRE_DEPARTAMENTO "
-                    + "FROM DEPARTAMENTO");
+            ResultSet rs = st.executeQuery("SELECT ID_DEPARTAMENTO,NOMBRE,DIRECCION FROM DEPARTAMENTO");
             while (rs.next()) {
                 Departamento departamento = new Departamento();
                 departamento.setId_departamento(rs.getInt("ID_DEPARTAMENTO"));
-                departamento.setNombre(rs.getString("NOMBRE_DEPARTAMENTO"));
+                departamento.setNombre(rs.getString("NOMBRE"));
+                departamento.setDireccion(rs.getString("DIRECCION"));
+                listaDepartamentoes.add(departamento);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error, no se pudo Listar ");
+        }
+        return listaDepartamentoes;
+    }
+    
+    public ArrayList<Departamento> listarBusquedaDeDepartamentos(String bus) {
+        String sql = "SELECT * FROM DEPARTAMENTO WHERE ID_DEPARTAMENTO LIKE '%"+bus+"%' OR UPPER(NOMBRE) LIKE UPPER('%"+bus+"%') ORDER BY ID_DEPARTAMENTO";
+        ArrayList<Departamento> listaDepartamentoes = new ArrayList<>();
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                Departamento departamento = new Departamento();
+                departamento.setId_departamento(rs.getInt("ID_DEPARTAMENTO"));
+                departamento.setNombre(rs.getString("NOMBRE"));
+                departamento.setDireccion(rs.getString("DIRECCION"));
                 listaDepartamentoes.add(departamento);
             }
         } catch (SQLException e) {

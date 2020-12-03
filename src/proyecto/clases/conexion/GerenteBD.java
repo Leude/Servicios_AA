@@ -1,15 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package proyecto.clases.conexion;
 
-/**
- * 
- * @author Sammy Guergachi <sguergachi at gmail.com>
- */
-public class GerenteBD {
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import proyecto.clases.principales.Gerente;
+import proyecto.conexion.Conexion;
+
+public class GerenteBD extends Conexion {
+
+    public void altaGerente(Gerente trabajador) {
+        try {
+            PreparedStatement pst = conn.prepareStatement("INSERT INTO GERENTE(ID_EMPLEADO, ID_SUCURSAL, ID_TURNO) VALUES (?,?,?)");
+            pst.setInt(1, trabajador.getId_empleado());
+            pst.setInt(2, trabajador.getId_sucursal());
+            pst.setString(3, trabajador.getId_turno());
+            pst.executeQuery();
+            JOptionPane.showMessageDialog(null, "Gerente Registrado Correctamente");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            JOptionPane.showMessageDialog(null, "En esta sucursal ya esta asignado un gerente");
+        }
+    }
 
 }

@@ -4,8 +4,14 @@ public class Departamento {
 
     private String nombre;
     private int id_departamento;
+    private String direccion;
 
-    public Departamento() {
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getNombre() {
@@ -24,6 +30,10 @@ public class Departamento {
         this.id_departamento = id_departamento;
     }
 
+    @Override
+    public String toString() {
+        return "Departamento{" + "nombre=" + nombre + '}';
+    }
     
-
+    
 }
