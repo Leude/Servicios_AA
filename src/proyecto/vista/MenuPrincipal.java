@@ -73,6 +73,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         reporte_asistencias.setText("| ° | Reporte de asistencia");
+        reporte_asistencias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reporte_asistenciasActionPerformed(evt);
+            }
+        });
 
         reporte_sucursales.setText("/T\\ Reporte de sucursales");
 
@@ -225,6 +230,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         sa.setVisible(true);
         dispose();
     }//GEN-LAST:event_control_asistenciasActionPerformed
+
+    private void reporte_asistenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporte_asistenciasActionPerformed
+        ReporteAsistencia ra = new ReporteAsistencia();
+        ra.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_reporte_asistenciasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
