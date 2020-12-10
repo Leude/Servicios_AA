@@ -33,7 +33,7 @@ public class LoginSistema extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(81, 96, 115));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 204));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Acceso al Sistema");
 
