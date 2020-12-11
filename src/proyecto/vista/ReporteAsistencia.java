@@ -46,7 +46,7 @@ public class ReporteAsistencia extends javax.swing.JFrame {
         titulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo.setText("Asignacion de Puesto de Trabajo");
+        titulo.setText("Rporte de Aistencia Por Intervalos de Fechas");
         titulo.setAlignmentY(0.0F);
         titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
