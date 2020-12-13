@@ -103,7 +103,7 @@ public class LoginSistema extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(171, 171, 171)
                         .addComponent(imagen_01)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +127,7 @@ public class LoginSistema extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(540, 485));
+        setSize(new java.awt.Dimension(596, 485));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
