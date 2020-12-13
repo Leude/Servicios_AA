@@ -30,6 +30,7 @@ public class ReporteAsistencia extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 255));
+        setExtendedState(6);
         setForeground(new java.awt.Color(51, 204, 0));
 
         jPanel1.setBackground(new java.awt.Color(81, 96, 115));
