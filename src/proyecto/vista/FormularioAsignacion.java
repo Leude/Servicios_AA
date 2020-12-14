@@ -305,20 +305,20 @@ public class FormularioAsignacion extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_consultaActionPerformed
 
     private void actalizarBoxDepartamentos() {
-        for (int i = 0; i < departamento_bd.listarTodosLosDepartamentos().size(); i++) {
-            box_departamento.addItem(departamento_bd.listarTodosLosDepartamentos().get(i).getNombre());
+        for (int i = 0; i < departamento_bd.listarBusquedaDeDepartamentos("").size(); i++) {
+            box_departamento.addItem(departamento_bd.listarBusquedaDeDepartamentos("").get(i).getNombre());
         }
     }
 
     private void actalizarBoxSucursales() {
-        for (int i = 0; i < sucursal_bd.listarTodasLasSucursales().size(); i++) {
-            box_sucursal.addItem(sucursal_bd.listarTodasLasSucursales().get(i).getNombre());
+        for (int i = 0; i < sucursal_bd.listarBusquedaDeSucursales("").size(); i++) {
+            box_sucursal.addItem(sucursal_bd.listarBusquedaDeSucursales("").get(i).getNombre());
         }
     }
 
     private void actalizarBoxTurnos() {
-        for (int i = 0; i < turno_bd.listarTodosLosTurnos().size(); i++) {
-            box_turno.addItem(turno_bd.listarTodosLosTurnos().get(i).getId_turno());
+        for (int i = 0; i < turno_bd.listarBusquedaDeTurnos("").size(); i++) {
+            box_turno.addItem(turno_bd.listarBusquedaDeTurnos("").get(i).getId_turno());
         }
     }
 
