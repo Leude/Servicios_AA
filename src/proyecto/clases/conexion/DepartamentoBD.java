@@ -11,6 +11,8 @@ import proyecto.conexion.Conexion;
 
 public class DepartamentoBD extends Conexion {
 
+    private Departamento departamento;
+
     public void altaDepartamento(Departamento departamento) {
         try {
             PreparedStatement pst = conn.prepareStatement("INSERT INTO DEPARTAMENTO(NOMBRE,DIRECCION) VALUES(?,?)");
@@ -39,7 +41,6 @@ public class DepartamentoBD extends Conexion {
         }
     }
 
-    //Eliminar datos de la DB
     public void bajaDepartamento(Object id_departamento) {
         try {
             PreparedStatement pst = conn.prepareStatement("DELETE FROM DEPARTAMENTO WHERE ID_DEPARTAMENTO=?");
@@ -53,33 +54,14 @@ public class DepartamentoBD extends Conexion {
         }
     }
 
-    public ArrayList<Departamento> listarTodosLosDepartamentos() {
-        ArrayList<Departamento> listaDepartamentoes = new ArrayList<>();
-        try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT ID_DEPARTAMENTO,NOMBRE,DIRECCION FROM DEPARTAMENTO");
-            while (rs.next()) {
-                Departamento departamento = new Departamento();
-                departamento.setId_departamento(rs.getInt("ID_DEPARTAMENTO"));
-                departamento.setNombre(rs.getString("NOMBRE"));
-                departamento.setDireccion(rs.getString("DIRECCION"));
-                listaDepartamentoes.add(departamento);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            JOptionPane.showMessageDialog(null, "Error, no se pudo Listar ");
-        }
-        return listaDepartamentoes;
-    }
-    
     public ArrayList<Departamento> listarBusquedaDeDepartamentos(String bus) {
-        String sql = "SELECT * FROM DEPARTAMENTO WHERE ID_DEPARTAMENTO LIKE '%"+bus+"%' OR UPPER(NOMBRE) LIKE UPPER('%"+bus+"%') ORDER BY ID_DEPARTAMENTO";
+        String sql = "SELECT * FROM DEPARTAMENTO WHERE ID_DEPARTAMENTO LIKE '%" + bus + "%' OR UPPER(NOMBRE) LIKE UPPER('%" + bus + "%') ORDER BY ID_DEPARTAMENTO";
         ArrayList<Departamento> listaDepartamentoes = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                Departamento departamento = new Departamento();
+                departamento = new Departamento();
                 departamento.setId_departamento(rs.getInt("ID_DEPARTAMENTO"));
                 departamento.setNombre(rs.getString("NOMBRE"));
                 departamento.setDireccion(rs.getString("DIRECCION"));

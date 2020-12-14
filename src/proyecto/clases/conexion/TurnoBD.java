@@ -1,6 +1,5 @@
 package proyecto.clases.conexion;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +10,8 @@ import proyecto.clases.principales.Turno;
 import proyecto.conexion.Conexion;
 
 public class TurnoBD extends Conexion {
+
+    private Turno turno;
 
     public void altaTurno(Turno turno) {
         try {
@@ -24,26 +25,6 @@ public class TurnoBD extends Conexion {
             System.out.println(ex.getMessage());
             JOptionPane.showMessageDialog(null, "Turno no Registrado");
         }
-    }
-
-    public ArrayList<Turno> consultaTurno(String id_turno) {
-        ArrayList<Turno> listaTurnos = new ArrayList<>();
-        try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT id_turno ID_TURNO, TO_CHAR((hora_inicial),'HH24:MI') HORA_INICIAL,TO_CHAR((hora_final),'HH24:MI') HORA_FINAL  FROM turno WHERE ID_TURNO = '" + id_turno+"'");
-            while (rs.next()) {
-                Turno turno = new Turno();
-                turno.setId_turno(rs.getString("ID_TURNO"));
-                turno.setHora_inicial(rs.getString("HORA_INICIAL"));
-                turno.setHora_final(rs.getString("HORA_FINAL"));
-                listaTurnos.add(turno);
-            }
-            JOptionPane.showMessageDialog(null, "Turno Encontrado");
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-            JOptionPane.showMessageDialog(null, "Turno no Encontrado");
-        }
-        return listaTurnos;
     }
 
     public void cambioTurno(Turno turno, String id_turno) {
@@ -61,7 +42,6 @@ public class TurnoBD extends Conexion {
         }
     }
 
-    //Eliminar datos de la DB
     public void bajaTurno(String id_turno) {
         try {
             PreparedStatement pst = conn.prepareStatement("DELETE FROM TURNO WHERE ID_TURNO=?");
@@ -74,34 +54,14 @@ public class TurnoBD extends Conexion {
         }
     }
 
-    public ArrayList<Turno> listarTodosLosTurnos() {
-        
-        ArrayList<Turno> listaTurnos = new ArrayList<>();
-        try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT id_turno ID_TURNO, TO_CHAR((hora_inicial),'HH24:MI') HORA_INICIAL,TO_CHAR((hora_final),'HH24:MI') HORA_FINAL  FROM turno");
-            while (rs.next()) {
-                Turno turno = new Turno();
-                turno.setId_turno(rs.getString(1));
-                turno.setHora_inicial(rs.getString(2));
-                turno.setHora_final(rs.getString(3));
-                listaTurnos.add(turno);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            JOptionPane.showMessageDialog(null, "Todos los Turno no se pudieron Listar");
-        }
-        return listaTurnos;
-    }
-    
     public ArrayList<Turno> listarBusquedaDeTurnos(String bus) {
-        
+
         ArrayList<Turno> listaTurnos = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT id_turno ID_TURNO, TO_CHAR((hora_inicial),'HH24:MI') HORA_INICIAL,TO_CHAR((hora_final),'HH24:MI') HORA_FINAL FROM turno WHERE UPPER(ID_TURNO) LIKE UPPER('%"+bus+"%') ORDER BY ID_TURNO");
+            ResultSet rs = st.executeQuery("SELECT id_turno ID_TURNO, TO_CHAR((hora_inicial),'HH24:MI') HORA_INICIAL,TO_CHAR((hora_final),'HH24:MI') HORA_FINAL FROM turno WHERE UPPER(ID_TURNO) LIKE UPPER('%" + bus + "%') ORDER BY ID_TURNO");
             while (rs.next()) {
-                Turno turno = new Turno();
+                turno = new Turno();
                 turno.setId_turno(rs.getString(1));
                 turno.setHora_inicial(rs.getString(2));
                 turno.setHora_final(rs.getString(3));

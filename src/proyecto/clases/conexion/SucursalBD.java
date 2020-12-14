@@ -11,6 +11,8 @@ import proyecto.conexion.Conexion;
 
 public class SucursalBD extends Conexion {
 
+    private Sucursal sucursal;
+    
     public void altaSucursal(Sucursal sucursal) {
         try {
             PreparedStatement pst = conn.prepareStatement("INSERT INTO SUCURSAL(NOMBRE,DIRECCION) VALUES(?,?)");
@@ -40,7 +42,6 @@ public class SucursalBD extends Conexion {
         }
     }
 
-    //Eliminar datos de la DB
     public void bajaSucursal(Object id_sucursal) {
         try {
             PreparedStatement pst = conn.prepareStatement("DELETE FROM SUCURSAL WHERE ID_SUCURSAL=?");
@@ -54,25 +55,6 @@ public class SucursalBD extends Conexion {
         }
     }
 
-    public ArrayList<Sucursal> listarTodasLasSucursales() {
-        ArrayList<Sucursal> listaSucursales = new ArrayList<>();
-        try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT ID_SUCURSAL,NOMBRE,DIRECCION FROM SUCURSAL");
-            while (rs.next()) {
-                Sucursal sucursal = new Sucursal();
-                sucursal.setId_sucursal(rs.getInt("ID_SUCURSAL"));
-                sucursal.setNombre(rs.getString("NOMBRE"));
-                sucursal.setDireccion(rs.getString("DIRECCION"));
-                listaSucursales.add(sucursal);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            JOptionPane.showMessageDialog(null, "Error, no se pudo Listar ");
-        }
-        return listaSucursales;
-    }
-
     public ArrayList<Sucursal> listarBusquedaDeSucursales(String bus) {
         String sql = "SELECT * FROM SUCURSAL WHERE ID_SUCURSAL LIKE '%" + bus + "%' OR UPPER(NOMBRE) LIKE UPPER('%" + bus + "%') ORDER BY ID_SUCURSAL";
         ArrayList<Sucursal> listaSucursales = new ArrayList<>();
@@ -80,7 +62,7 @@ public class SucursalBD extends Conexion {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                Sucursal sucursal = new Sucursal();
+                sucursal = new Sucursal();
                 sucursal.setId_sucursal(rs.getInt("ID_SUCURSAL"));
                 sucursal.setNombre(rs.getString("NOMBRE"));
                 sucursal.setDireccion(rs.getString("DIRECCION"));

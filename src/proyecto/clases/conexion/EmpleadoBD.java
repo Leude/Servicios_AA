@@ -11,6 +11,8 @@ import proyecto.conexion.Conexion;
 
 public class EmpleadoBD extends Conexion {
 
+    private Empleado empleado;
+
     public void altaEmpleado(Empleado empleado) {
         String sql = "INSERT INTO empleado(NOMBRE,PRIMER_APELLIDO,SEGUNDO_APELLIDO,TELEFONO,CORREO,DIRECCION,CLAVE) VALUES (?,?,?,?,?,?,?)";
         try {
@@ -31,7 +33,7 @@ public class EmpleadoBD extends Conexion {
     }
 
     public void cambioEmpleado(Empleado empleado, Object id_empleado) {
-        String sql ="UPDATE EMPLEADO SET NOMBRE= ?, PRIMER_APELLIDO= ?, SEGUNDO_APELLIDO= ?,TELEFONO=?,CORREO=?,DIRECCION=?,CLAVE=? WHERE ID_EMPLEADO= ?";
+        String sql = "UPDATE EMPLEADO SET NOMBRE= ?, PRIMER_APELLIDO= ?, SEGUNDO_APELLIDO= ?,TELEFONO=?,CORREO=?,DIRECCION=?,CLAVE=? WHERE ID_EMPLEADO= ?";
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, empleado.getNombre());
@@ -50,9 +52,8 @@ public class EmpleadoBD extends Conexion {
         }
     }
 
-    //Eliminar datos de la DB
     public void bajaEmpleado(Object id_empleado) {
-        String sql ="DELETE FROM EMPLEADO WHERE ID_EMPLEADO=?";
+        String sql = "DELETE FROM EMPLEADO WHERE ID_EMPLEADO=?";
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
 
@@ -66,13 +67,13 @@ public class EmpleadoBD extends Conexion {
     }
 
     public ArrayList<Empleado> listarBusquedaDeEmpleadosSinAsignar(String bus) {
-        String sql = "SELECT * FROM (SELECT * FROM empleado e WHERE id_empleado NOT IN (SELECT t.id_empleado FROM trabajador t) AND id_empleado NOT IN (SELECT g.id_empleado FROM gerente g) AND id_empleado NOT IN (SELECT s.id_empleado FROM supervisor s)) da WHERE da.id_empleado like '%"+bus+"%' or UPPER(da.nombre) like UPPER('%"+bus+"%') ORDER BY id_empleado";
+        String sql = "SELECT * FROM (SELECT * FROM empleado e WHERE id_empleado NOT IN (SELECT t.id_empleado FROM trabajador t) AND id_empleado NOT IN (SELECT g.id_empleado FROM gerente g) AND id_empleado NOT IN (SELECT s.id_empleado FROM supervisor s)) da WHERE da.id_empleado like '%" + bus + "%' or UPPER(da.nombre) like UPPER('%" + bus + "%') ORDER BY id_empleado";
         ArrayList<Empleado> listaEmpleados = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                Empleado empleado = new Empleado();
+                empleado = new Empleado();
                 empleado.setId_empleado(rs.getInt("ID_EMPLEADO"));
                 empleado.setNombre(rs.getString("NOMBRE"));
                 empleado.setPrimer_apellido(rs.getString("PRIMER_APELLIDO"));
@@ -91,13 +92,13 @@ public class EmpleadoBD extends Conexion {
     }
 
     public ArrayList<Empleado> listarBusquedaDeEmpleadosAsignados(String bus) {
-        String sql = "SELECT * FROM (SELECT * FROM empleado e WHERE id_empleado IN (SELECT t.id_empleado FROM trabajador t) OR id_empleado IN (SELECT g.id_empleado FROM gerente g) OR id_empleado IN (SELECT s.id_empleado FROM supervisor s)) da WHERE da.id_empleado like '%"+bus+"%' or UPPER(da.nombre) like UPPER('%"+bus+"%') ORDER BY id_empleado";
+        String sql = "SELECT * FROM (SELECT * FROM empleado e WHERE id_empleado IN (SELECT t.id_empleado FROM trabajador t) OR id_empleado IN (SELECT g.id_empleado FROM gerente g) OR id_empleado IN (SELECT s.id_empleado FROM supervisor s)) da WHERE da.id_empleado like '%" + bus + "%' or UPPER(da.nombre) like UPPER('%" + bus + "%') ORDER BY id_empleado";
         ArrayList<Empleado> listaEmpleados = new ArrayList<>();
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                Empleado empleado = new Empleado();
+                empleado = new Empleado();
                 empleado.setId_empleado(rs.getInt("ID_EMPLEADO"));
                 empleado.setNombre(rs.getString("NOMBRE"));
                 empleado.setPrimer_apellido(rs.getString("PRIMER_APELLIDO"));
