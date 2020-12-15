@@ -10,7 +10,10 @@ public class Sucursal {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void setDireccion(String direccion) throws IllegalArgumentException  {
+        if(direccion == null){
+            throw new IllegalArgumentException();
+        }
         this.direccion = direccion;
     }
 
@@ -18,7 +21,10 @@ public class Sucursal {
         return id_sucursal;
     }
 
-    public void setId_sucursal(int id_sucursal) {
+    public void setId_sucursal(int id_sucursal) throws IllegalArgumentException  {
+        if(id_sucursal < 0){
+            throw new IllegalArgumentException("El id no es valido");
+        }
         this.id_sucursal = id_sucursal;
     }
 
@@ -26,7 +32,10 @@ public class Sucursal {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre) throws IllegalArgumentException  {
+        if(nombre == null){
+            throw new IllegalArgumentException();
+        }
         this.nombre = nombre;
     }
 

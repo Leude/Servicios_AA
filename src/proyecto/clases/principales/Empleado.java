@@ -19,11 +19,17 @@ public class Empleado {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void setDireccion(String direccion) throws IllegalArgumentException  {
+        if(direccion == null){
+            throw new IllegalArgumentException();
+        }
         this.direccion = direccion;
     }
 
-    public void setClave(String clave) {
+    public void setClave(String clave) throws IllegalArgumentException  {
+        if(clave == null){
+            throw new IllegalArgumentException();
+        }
         this.clave = clave;
     }
 
@@ -31,7 +37,10 @@ public class Empleado {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(String telefono) throws IllegalArgumentException  {
+        if(telefono == null){
+            throw new IllegalArgumentException();
+        }
         this.telefono = telefono;
     }
 
@@ -39,7 +48,10 @@ public class Empleado {
         return correo;
     }
 
-    public void setCorreo(String correo) {
+    public void setCorreo(String correo) throws IllegalArgumentException  {
+        if(correo == null){
+            throw new IllegalArgumentException();
+        }
         this.correo = correo;
     }
 
@@ -47,7 +59,10 @@ public class Empleado {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre) throws IllegalArgumentException  {
+        if(nombre == null){
+            throw new IllegalArgumentException();
+        }
         this.nombre = nombre;
     }
 
@@ -55,7 +70,10 @@ public class Empleado {
         return primer_apellido;
     }
 
-    public void setPrimer_apellido(String primer_apellido) {
+    public void setPrimer_apellido(String primer_apellido) throws IllegalArgumentException  {
+        if(primer_apellido == null){
+            throw new IllegalArgumentException();
+        }
         this.primer_apellido = primer_apellido;
     }
 
@@ -63,7 +81,10 @@ public class Empleado {
         return segundo_apellido;
     }
 
-    public void setSegundo_apellido(String segundo_apellido) {
+    public void setSegundo_apellido(String segundo_apellido) throws IllegalArgumentException  {
+        if(segundo_apellido == null){
+            throw new IllegalArgumentException();
+        }
         this.segundo_apellido = segundo_apellido;
     }
 
@@ -71,7 +92,10 @@ public class Empleado {
         return id_empleado;
     }
 
-    public void setId_empleado(int id_empleado) {
+    public void setId_empleado(int id_empleado) throws IllegalArgumentException  {
+        if(id_empleado<0){
+            throw new IllegalArgumentException("El id no es valido");
+        }
         this.id_empleado = id_empleado;
     }
 
