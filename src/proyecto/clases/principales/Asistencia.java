@@ -41,7 +41,6 @@ public class Asistencia {
     public String toString() {
         return "Asistencia{" + "hora_entrada=" + hora_entrada + ", hora_salida=" + hora_salida + ", id_empleado=" + id_empleado + '}';
     }
-
     
     
 }
