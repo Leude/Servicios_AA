@@ -6,12 +6,12 @@ import proyecto.clases.conexion.EmpleadoBD;
 import proyecto.clases.conexion.SucursalBD;
 import proyecto.clases.principales.Empleado;
 
-public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
+public class ReporteEmpleado extends javax.swing.JFrame {
 
     EmpleadoBD empleado_bd = new EmpleadoBD();
     SucursalBD sucursal_bd = new SucursalBD();
 
-    public ReporteSucursalesEmpleados() {
+    public ReporteEmpleado() {
         initComponents();
         actalizarBoxSucursales();
     }
@@ -20,7 +20,6 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         Registro = new javax.swing.JPanel();
         boton_atras = new javax.swing.JButton();
         boton_registrar = new javax.swing.JButton();
@@ -30,9 +29,7 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
         box_sucursal = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-
-        jLabel1.setText("jLabel1");
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 255));
@@ -41,7 +38,7 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
 
         Registro.setBackground(new java.awt.Color(255, 255, 255));
 
-        boton_atras.setForeground(new java.awt.Color(0, 51, 255));
+        boton_atras.setForeground(new java.awt.Color(51, 51, 255));
         boton_atras.setText("Atras");
         boton_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +46,7 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
             }
         });
 
-        boton_registrar.setForeground(new java.awt.Color(0, 0, 255));
+        boton_registrar.setForeground(new java.awt.Color(51, 51, 255));
         boton_registrar.setText("Registrar");
         boton_registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +80,7 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
+        jLabel19.setBackground(new java.awt.Color(51, 51, 255));
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 51, 255));
         jLabel19.setText("Sucursal ➤");
@@ -117,10 +115,10 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
         tabla.setSelectionForeground(new java.awt.Color(255, 102, 0));
         jScrollPane3.setViewportView(tabla);
 
-        box_sucursal.setForeground(new java.awt.Color(51, 51, 255));
+        box_sucursal.setForeground(new java.awt.Color(102, 102, 255));
         box_sucursal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una Sucursal" }));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout RegistroLayout = new javax.swing.GroupLayout(Registro);
         Registro.setLayout(RegistroLayout);
@@ -132,50 +130,43 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
                     .addGroup(RegistroLayout.createSequentialGroup()
                         .addGap(168, 168, 168)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(boton_atras, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(157, 157, 157)))
+                    .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(boton_atras, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(boton_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegistroLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                         .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
                             .addGroup(RegistroLayout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(boton_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(126, 126, 126))))
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         RegistroLayout.setVerticalGroup(
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroLayout.createSequentialGroup()
                 .addComponent(encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(32, 32, 32)
                         .addComponent(boton_atras)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(82, 82, 82))
                     .addGroup(RegistroLayout.createSequentialGroup()
-                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
-                                .addComponent(box_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(210, 210, 210))
-                            .addGroup(RegistroLayout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(110, 110, 110)
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(box_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(boton_registrar)
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel2)
-                        .addGap(81, 81, 81))))
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         getContentPane().add(Registro, java.awt.BorderLayout.CENTER);
@@ -191,18 +182,22 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_atrasActionPerformed
 
     private void boton_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registrarActionPerformed
-        this.mostrarReporte();
+        mostrarReporte();
     }//GEN-LAST:event_boton_registrarActionPerformed
 
    public void mostrarReporte() {
-        ArrayList<Empleado> lista = empleado_bd.listarEmpleadosPorSucursales(box_sucursal.getSelectedItem().toString());
-        Object[][] objetos = new Object[lista.size()][1];
+        ArrayList<Empleado> lista = empleado_bd.listarSupervisoresPorSucursales(box_sucursal.getSelectedItem().toString());
+        Object[][] objetos = new Object[lista.size()][5];
         for (int i = 0; i < lista.size(); i++) {
-            objetos[i][0] = lista.get(i).getId_empleado(); 
+            objetos[i][0] = lista.get(i).getId_empleado();
+            objetos[i][1] = lista.get(i).getNombre();
+            objetos[i][2] = lista.get(i).getPrimer_apellido();
+            objetos[i][3] = lista.get(i).getSegundo_apellido();
+            objetos[i][4] = lista.get(i).getClave();
         }
         tabla.setModel(new javax.swing.table.DefaultTableModel(
                 objetos, new String[]{
-                    "Total de Empleados"
+                    "No.Empleado", "Nombre", "Primer Apellido", "Segundo Apellido","Turno"
                 }
         ));
     }
@@ -221,7 +216,6 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
     private javax.swing.JPanel encabezado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tabla;
     private javax.swing.JLabel titulo;

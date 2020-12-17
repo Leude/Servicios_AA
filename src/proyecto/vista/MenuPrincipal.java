@@ -20,13 +20,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         control_asistencias = new javax.swing.JButton();
         reporte_asistencias = new javax.swing.JButton();
         reporte_sucursales = new javax.swing.JButton();
-        reporte_empleados = new javax.swing.JButton();
         salir = new javax.swing.JButton();
         encabezado = new javax.swing.JPanel();
         titulo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         reporte_asistencias1 = new javax.swing.JButton();
-        reporte_asistencias2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 255));
@@ -99,7 +97,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         reporte_asistencias.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         reporte_asistencias.setForeground(new java.awt.Color(102, 102, 255));
-        reporte_asistencias.setText("| ° | Reporte de asistencia");
+        reporte_asistencias.setText("| ° | Reporte de Asistencia");
         reporte_asistencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reporte_asistenciasActionPerformed(evt);
@@ -107,15 +105,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         reporte_sucursales.setText("/T\\ Reporte de sucursales");
-
-        reporte_empleados.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        reporte_empleados.setForeground(new java.awt.Color(51, 51, 255));
-        reporte_empleados.setText("+* Reporte de empleados por turno");
-        reporte_empleados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reporte_empleadosActionPerformed(evt);
-            }
-        });
 
         salir.setText("Salir");
         salir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -155,19 +144,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         reporte_asistencias1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         reporte_asistencias1.setForeground(new java.awt.Color(102, 102, 255));
-        reporte_asistencias1.setText("| ° | Reporte de Sucursales por Supervisores");
+        reporte_asistencias1.setText("| ° | Reporte de Empleados");
         reporte_asistencias1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reporte_asistencias1ActionPerformed(evt);
-            }
-        });
-
-        reporte_asistencias2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        reporte_asistencias2.setForeground(new java.awt.Color(102, 102, 255));
-        reporte_asistencias2.setText("| ° | Reporte de Sucursales por Empleados");
-        reporte_asistencias2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reporte_asistencias2ActionPerformed(evt);
             }
         });
 
@@ -196,21 +176,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                 .addComponent(departamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(48, 48, 48)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(reporte_asistencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(reporte_empleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(asignacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(control_asistencias, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                                .addComponent(reporte_asistencias2)
-                                .addGap(4, 4, 4)
-                                .addComponent(reporte_asistencias1)))
+                            .addComponent(reporte_asistencias, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(asignacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
+                            .addComponent(control_asistencias, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(reporte_asistencias1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(50, 50, 50))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -226,9 +197,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(control_asistencias, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(reporte_empleados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(reporte_asistencias, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(reporte_asistencias, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1544, 1544, 1544)
                         .addComponent(reporte_sucursales)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -245,10 +214,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                 .addComponent(departamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(reporte_asistencias2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(reporte_asistencias1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(turnos, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(turnos, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(reporte_asistencias1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -275,12 +242,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         fa.setVisible(true);
         dispose();
     }//GEN-LAST:event_asignacionActionPerformed
-
-    private void reporte_empleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporte_empleadosActionPerformed
-        ReporteEmpleadosTurno ret = new ReporteEmpleadosTurno();
-        ret.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_reporte_empleadosActionPerformed
 
     private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
         LoginSistema login = new LoginSistema();
@@ -313,16 +274,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_reporte_asistenciasActionPerformed
 
     private void reporte_asistencias1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporte_asistencias1ActionPerformed
-        ReporteSucursalesSupervisores rse = new ReporteSucursalesSupervisores();
+        ReporteEmpleado rse = new ReporteEmpleado();
         rse.setVisible(true);
         dispose();
     }//GEN-LAST:event_reporte_asistencias1ActionPerformed
-
-    private void reporte_asistencias2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporte_asistencias2ActionPerformed
-        ReporteSucursalesEmpleados rse = new ReporteSucursalesEmpleados();
-        rse.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_reporte_asistencias2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -335,8 +290,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton reporte_asistencias;
     private javax.swing.JButton reporte_asistencias1;
-    private javax.swing.JButton reporte_asistencias2;
-    private javax.swing.JButton reporte_empleados;
     private javax.swing.JButton reporte_sucursales;
     private javax.swing.JButton salir;
     private javax.swing.JButton sucursales;
