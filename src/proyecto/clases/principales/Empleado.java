@@ -20,16 +20,10 @@ public class Empleado {
     }
 
     public void setDireccion(String direccion) throws IllegalArgumentException  {
-        if(direccion == null){
-            throw new IllegalArgumentException();
-        }
         this.direccion = direccion;
     }
 
     public void setClave(String clave) throws IllegalArgumentException  {
-        if(clave == null){
-            throw new IllegalArgumentException();
-        }
         this.clave = clave;
     }
 
@@ -37,10 +31,7 @@ public class Empleado {
         return telefono;
     }
 
-    public void setTelefono(String telefono) throws IllegalArgumentException  {
-        if(telefono == null){
-            throw new IllegalArgumentException();
-        }
+    public void setTelefono(String telefono)  {
         this.telefono = telefono;
     }
 
@@ -49,9 +40,7 @@ public class Empleado {
     }
 
     public void setCorreo(String correo) throws IllegalArgumentException  {
-        if(correo == null){
-            throw new IllegalArgumentException();
-        }
+        
         this.correo = correo;
     }
 

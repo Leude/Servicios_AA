@@ -11,8 +11,6 @@ import proyecto.conexion.Conexion;
 
 public class SucursalBD extends Conexion {
 
-    private Sucursal sucursal;
-    
     public void altaSucursal(Sucursal sucursal) {
         try {
             PreparedStatement pst = conn.prepareStatement("INSERT INTO SUCURSAL(NOMBRE,DIRECCION) VALUES(?,?)");
@@ -62,7 +60,7 @@ public class SucursalBD extends Conexion {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                sucursal = new Sucursal();
+                Sucursal sucursal = new Sucursal();
                 sucursal.setId_sucursal(rs.getInt("ID_SUCURSAL"));
                 sucursal.setNombre(rs.getString("NOMBRE"));
                 sucursal.setDireccion(rs.getString("DIRECCION"));

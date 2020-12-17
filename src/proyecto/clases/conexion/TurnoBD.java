@@ -11,8 +11,6 @@ import proyecto.conexion.Conexion;
 
 public class TurnoBD extends Conexion {
 
-    private Turno turno;
-
     public void altaTurno(Turno turno) {
         try {
             PreparedStatement pst = conn.prepareStatement("INSERT INTO TURNO(ID_TURNO,HORA_INICIAL,HORA_FINAL) VALUES (?,TO_DATE(?, 'HH24:MI'),TO_DATE(?, 'HH24:MI'))");
@@ -61,7 +59,7 @@ public class TurnoBD extends Conexion {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT id_turno ID_TURNO, TO_CHAR((hora_inicial),'HH24:MI') HORA_INICIAL,TO_CHAR((hora_final),'HH24:MI') HORA_FINAL FROM turno WHERE UPPER(ID_TURNO) LIKE UPPER('%" + bus + "%') ORDER BY ID_TURNO");
             while (rs.next()) {
-                turno = new Turno();
+                Turno turno = new Turno();
                 turno.setId_turno(rs.getString(1));
                 turno.setHora_inicial(rs.getString(2));
                 turno.setHora_final(rs.getString(3));

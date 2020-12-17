@@ -11,8 +11,6 @@ import proyecto.conexion.Conexion;
 
 public class AsistenciaBD extends Conexion {
 
-    private Asistencia asistencia;
-
     public void entradaAsistencia(int empleado) {
         String sql = "INSERT INTO asistencia(id_empleado,hora_entrada) VALUES(?,sysdate)";
         try {
@@ -46,7 +44,7 @@ public class AsistenciaBD extends Conexion {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                asistencia = new Asistencia();
+                Asistencia asistencia = new Asistencia();
                 asistencia.setId_empleado(rs.getInt(1));
                 asistencia.setHora_entrada(rs.getString(2));
                 asistencia.setHora_salida(rs.getString(3));
@@ -59,4 +57,5 @@ public class AsistenciaBD extends Conexion {
         }
         return listaAsistidos;
     }
+
 }

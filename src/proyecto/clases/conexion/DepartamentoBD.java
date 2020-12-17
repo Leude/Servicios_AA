@@ -11,8 +11,6 @@ import proyecto.conexion.Conexion;
 
 public class DepartamentoBD extends Conexion {
 
-    private Departamento departamento;
-
     public void altaDepartamento(Departamento departamento) {
         try {
             PreparedStatement pst = conn.prepareStatement("INSERT INTO DEPARTAMENTO(NOMBRE,DIRECCION) VALUES(?,?)");
@@ -61,7 +59,7 @@ public class DepartamentoBD extends Conexion {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                departamento = new Departamento();
+                Departamento departamento = new Departamento();
                 departamento.setId_departamento(rs.getInt("ID_DEPARTAMENTO"));
                 departamento.setNombre(rs.getString("NOMBRE"));
                 departamento.setDireccion(rs.getString("DIRECCION"));

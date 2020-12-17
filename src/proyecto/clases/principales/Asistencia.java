@@ -20,10 +20,7 @@ public class Asistencia {
     }
 
     public void setHora_salida(String hora_salida) throws IllegalArgumentException {
-        if(hora_salida == null){
-            throw new IllegalArgumentException();
-        }
-        this.hora_salida = hora_salida;
+         this.hora_salida = hora_salida;
     }
 
     public int getId_empleado() {

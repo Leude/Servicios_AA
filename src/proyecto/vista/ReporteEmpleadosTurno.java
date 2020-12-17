@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import proyecto.clases.conexion.TurnoBD;
 import proyecto.clases.principales.Turno;
 
-public class ReporteSucursales extends javax.swing.JFrame {
+public class ReporteEmpleadosTurno extends javax.swing.JFrame {
 
     TurnoBD turno_bd = new TurnoBD();
 
-    public ReporteSucursales() {
+    public ReporteEmpleadosTurno() {
         initComponents();
         mostrarTodosLosTurno();
     }
@@ -66,14 +66,14 @@ public class ReporteSucursales extends javax.swing.JFrame {
             .addGroup(encabezadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(107, 107, 107))
         );
         encabezadoLayout.setVerticalGroup(
             encabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(encabezadoLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, encabezadoLayout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addComponent(titulo)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N

@@ -2,11 +2,14 @@ package proyecto.vista;
 
 import java.util.ArrayList;
 import proyecto.clases.conexion.AsistenciaBD;
+import proyecto.clases.conexion.EmpleadoBD;
 import proyecto.clases.principales.Asistencia;
+import proyecto.clases.principales.Empleado;
 
 public class ReporteAsistencia extends javax.swing.JFrame {
 
     AsistenciaBD asistencia_bd = new AsistenciaBD();
+    EmpleadoBD empleado_bd = new EmpleadoBD();
 
     public ReporteAsistencia() {
         initComponents();
@@ -47,7 +50,7 @@ public class ReporteAsistencia extends javax.swing.JFrame {
         titulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo.setText("Rporte de Aistencia Por Intervalos de Fechas");
+        titulo.setText("Reporte de Asistencia Por Intervalos de Fechas");
         titulo.setAlignmentY(0.0F);
         titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -124,37 +127,34 @@ public class ReporteAsistencia extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(atras))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(106, 106, 106)
-                                .addComponent(boton_consulta))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dato_fecha_final, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dato_fecha_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(atras)))
+                            .addComponent(dato_fecha_final, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(boton_consulta)
+                            .addComponent(dato_fecha_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(141, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)
+                        .addGap(3, 3, 3)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(dato_fecha_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(18, 18, 18)
                         .addComponent(dato_fecha_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91)
+                        .addGap(46, 46, 46)
                         .addComponent(boton_consulta)
                         .addGap(106, 106, 106)))
                 .addComponent(atras)
@@ -178,16 +178,17 @@ public class ReporteAsistencia extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_consultaActionPerformed
 
     public void mostrarBusquedaAsistidos() {
-        ArrayList<Asistencia> lista = asistencia_bd.listarBusquedaDeAsistidos(dato_fecha_inicial.getText(), dato_fecha_final.getText());
-        Object[][] objetos = new Object[lista.size()][3];
+        ArrayList<Empleado> lista = empleado_bd.listarBusquedaDeEmpleadosNoCumplenHorario(dato_fecha_inicial.getText(), dato_fecha_final.getText());
+        Object[][] objetos = new Object[lista.size()][4];
         for (int i = 0; i < lista.size(); i++) {
             objetos[i][0] = lista.get(i).getId_empleado();
-            objetos[i][1] = lista.get(i).getHora_entrada();
-            objetos[i][2] = lista.get(i).getHora_salida();
+            objetos[i][1] = lista.get(i).getNombre();
+            objetos[i][2] = lista.get(i).getPrimer_apellido();
+            objetos[i][3] = lista.get(i).getSegundo_apellido();
         }
         tabla.setModel(new javax.swing.table.DefaultTableModel(
                 objetos, new String[]{
-                    "No.Empleado", "Hora de Entrada", "Hora de Salida"
+                    "No.Empleado", "Nombre", "Primer Apellido", "Segundo Apellido"
                 }
         ));
     }
