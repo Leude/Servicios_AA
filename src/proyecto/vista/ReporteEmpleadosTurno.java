@@ -28,14 +28,16 @@ public class ReporteEmpleadosTurno extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 255));
         setExtendedState(6);
         setForeground(new java.awt.Color(51, 204, 0));
 
-        Registro.setBackground(new java.awt.Color(81, 96, 115));
+        Registro.setBackground(new java.awt.Color(255, 255, 255));
 
+        boton_atras.setForeground(new java.awt.Color(0, 0, 255));
         boton_atras.setText("Atras");
         boton_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,6 +45,7 @@ public class ReporteEmpleadosTurno extends javax.swing.JFrame {
             }
         });
 
+        boton_registrar.setForeground(new java.awt.Color(0, 0, 255));
         boton_registrar.setText("Registrar");
         boton_registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,26 +80,29 @@ public class ReporteEmpleadosTurno extends javax.swing.JFrame {
         );
 
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel19.setForeground(new java.awt.Color(51, 51, 255));
         jLabel19.setText("Sucursales ➤");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setForeground(new java.awt.Color(0, 0, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione la susursal", "Sucursal 1", "Sucursal 2", "Sucursal 3" }));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel20.setForeground(new java.awt.Color(51, 51, 255));
         jLabel20.setText("Gerentes ➤");
 
         jLabel21.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel21.setForeground(new java.awt.Color(102, 102, 255));
         jLabel21.setText("Trabajadores ➤");
 
         jLabel22.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel22.setForeground(new java.awt.Color(51, 51, 255));
         jLabel22.setText("Sucursal: <SUCURSAL>");
 
         jLabel23.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel23.setForeground(new java.awt.Color(102, 102, 255));
         jLabel23.setText("Supervisores ➤");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout RegistroLayout = new javax.swing.GroupLayout(Registro);
         Registro.setLayout(RegistroLayout);
@@ -118,14 +124,18 @@ public class ReporteEmpleadosTurno extends javax.swing.JFrame {
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(196, 196, 196)))
                         .addGap(151, 151, 151)
-                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(RegistroLayout.createSequentialGroup()
                         .addGap(468, 468, 468)
                         .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(349, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(69, 69, 69))
         );
         RegistroLayout.setVerticalGroup(
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,11 +152,13 @@ public class ReporteEmpleadosTurno extends javax.swing.JFrame {
                 .addComponent(jLabel23)
                 .addGap(3, 3, 3)
                 .addComponent(jLabel20)
-                .addGap(81, 81, 81)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1)
+                .addGap(38, 38, 38)
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boton_registrar)
                     .addComponent(boton_atras))
-                .addGap(0, 202, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(Registro, java.awt.BorderLayout.CENTER);
@@ -206,6 +218,7 @@ public class ReporteEmpleadosTurno extends javax.swing.JFrame {
     private javax.swing.JButton boton_registrar;
     private javax.swing.JPanel encabezado;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;

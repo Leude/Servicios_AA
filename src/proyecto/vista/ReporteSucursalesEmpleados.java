@@ -19,6 +19,7 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         Registro = new javax.swing.JPanel();
         boton_atras = new javax.swing.JButton();
         boton_registrar = new javax.swing.JButton();
@@ -28,14 +29,18 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
         box_sucursal = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 255));
         setExtendedState(6);
         setForeground(new java.awt.Color(51, 204, 0));
 
-        Registro.setBackground(new java.awt.Color(81, 96, 115));
+        Registro.setBackground(new java.awt.Color(255, 255, 255));
 
+        boton_atras.setForeground(new java.awt.Color(0, 51, 255));
         boton_atras.setText("Atras");
         boton_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,6 +48,7 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
             }
         });
 
+        boton_registrar.setForeground(new java.awt.Color(0, 0, 255));
         boton_registrar.setText("Registrar");
         boton_registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,9 +83,10 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
         );
 
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel19.setForeground(new java.awt.Color(51, 51, 255));
         jLabel19.setText("Sucursal ➤");
 
+        tabla.setBackground(new java.awt.Color(204, 204, 255));
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -109,7 +116,10 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
         tabla.setSelectionForeground(new java.awt.Color(255, 102, 0));
         jScrollPane3.setViewportView(tabla);
 
+        box_sucursal.setForeground(new java.awt.Color(51, 51, 255));
         box_sucursal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una Sucursal" }));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout RegistroLayout = new javax.swing.GroupLayout(Registro);
         Registro.setLayout(RegistroLayout);
@@ -117,39 +127,54 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(RegistroLayout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(box_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
-            .addGroup(RegistroLayout.createSequentialGroup()
-                .addGap(252, 252, 252)
-                .addComponent(boton_atras, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(boton_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(188, 188, 188))
+                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(boton_atras, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(157, 157, 157)))
+                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(RegistroLayout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addComponent(boton_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(126, 126, 126))))
         );
         RegistroLayout.setVerticalGroup(
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroLayout.createSequentialGroup()
                 .addComponent(encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(boton_atras)
-                            .addComponent(boton_registrar))
-                        .addGap(76, 76, 76))
                     .addGroup(RegistroLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19)
-                            .addComponent(box_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(boton_atras)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
+                                .addComponent(box_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(210, 210, 210))
+                            .addGroup(RegistroLayout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(boton_registrar)
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel2)
+                        .addGap(81, 81, 81))))
         );
 
         getContentPane().add(Registro, java.awt.BorderLayout.CENTER);
@@ -193,7 +218,9 @@ public class ReporteSucursalesEmpleados extends javax.swing.JFrame {
     private javax.swing.JButton boton_registrar;
     private javax.swing.JComboBox box_sucursal;
     private javax.swing.JPanel encabezado;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tabla;
     private javax.swing.JLabel titulo;

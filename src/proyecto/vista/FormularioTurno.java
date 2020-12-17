@@ -34,14 +34,16 @@ public class FormularioTurno extends javax.swing.JFrame {
         dato_hora_inicial = new javax.swing.JFormattedTextField();
         dato_hora_final = new javax.swing.JFormattedTextField();
         dato_busqueda = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 255));
         setExtendedState(6);
         setForeground(new java.awt.Color(51, 204, 0));
 
-        Registro.setBackground(new java.awt.Color(81, 96, 115));
+        Registro.setBackground(new java.awt.Color(255, 255, 255));
 
+        boton_atras.setForeground(new java.awt.Color(51, 51, 255));
         boton_atras.setText("Atras");
         boton_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,6 +51,7 @@ public class FormularioTurno extends javax.swing.JFrame {
             }
         });
 
+        boton_registrar.setForeground(new java.awt.Color(51, 51, 255));
         boton_registrar.setText("Registrar");
         boton_registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,9 +90,11 @@ public class FormularioTurno extends javax.swing.JFrame {
         dato_turno.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel19.setForeground(new java.awt.Color(51, 51, 255));
         jLabel19.setText("Identificacion de Turno ➤");
 
+        tabla.setBackground(new java.awt.Color(204, 204, 255));
+        tabla.setForeground(new java.awt.Color(204, 204, 255));
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -124,6 +129,7 @@ public class FormularioTurno extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tabla);
 
+        boton_remover.setForeground(new java.awt.Color(102, 102, 255));
         boton_remover.setText("Remover");
         boton_remover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +137,7 @@ public class FormularioTurno extends javax.swing.JFrame {
             }
         });
 
+        boton_cambiar.setForeground(new java.awt.Color(51, 51, 255));
         boton_cambiar.setText("Cambiar");
         boton_cambiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +145,7 @@ public class FormularioTurno extends javax.swing.JFrame {
             }
         });
 
+        boton_consulta.setForeground(new java.awt.Color(51, 51, 255));
         boton_consulta.setText("Consultar Todos Los Turno");
         boton_consulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,11 +154,11 @@ public class FormularioTurno extends javax.swing.JFrame {
         });
 
         jLabel25.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel25.setForeground(new java.awt.Color(0, 0, 255));
         jLabel25.setText("Hora Inicial ➤");
 
         jLabel26.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel26.setForeground(new java.awt.Color(51, 51, 255));
         jLabel26.setText("Hora Final ➤");
 
         dato_hora_inicial.setBackground(new java.awt.Color(51, 51, 51));
@@ -175,33 +183,41 @@ public class FormularioTurno extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/turno.jpg"))); // NOI18N
+
         javax.swing.GroupLayout RegistroLayout = new javax.swing.GroupLayout(Registro);
         Registro.setLayout(RegistroLayout);
         RegistroLayout.setHorizontalGroup(
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(RegistroLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(boton_atras, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(boton_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(boton_cambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63))
+                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
                         .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dato_hora_final, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dato_turno, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dato_hora_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(boton_atras, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(boton_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(boton_cambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(63, 63, 63))
+                            .addGroup(RegistroLayout.createSequentialGroup()
+                                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dato_hora_final, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dato_turno, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dato_hora_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(RegistroLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(190, 190, 190)))
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroLayout.createSequentialGroup()
                         .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,6 +237,16 @@ public class FormularioTurno extends javax.swing.JFrame {
                 .addComponent(encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(boton_consulta)
+                            .addComponent(dato_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(boton_remover)
+                        .addContainerGap())
+                    .addGroup(RegistroLayout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel19)
@@ -238,22 +264,14 @@ public class FormularioTurno extends javax.swing.JFrame {
                             .addComponent(boton_registrar)
                             .addComponent(boton_cambiar)
                             .addComponent(boton_atras))
-                        .addGap(0, 208, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(boton_consulta)
-                            .addComponent(dato_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(boton_remover)
-                        .addContainerGap())))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))))
         );
 
         getContentPane().add(Registro, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1106, 656));
+        setSize(new java.awt.Dimension(1106, 670));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -327,6 +345,7 @@ public class FormularioTurno extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField dato_hora_inicial;
     private javax.swing.JTextField dato_turno;
     private javax.swing.JPanel encabezado;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;

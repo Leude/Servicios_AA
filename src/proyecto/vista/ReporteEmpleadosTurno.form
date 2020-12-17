@@ -34,7 +34,7 @@
     <Container class="javax.swing.JPanel" name="Registro">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="73" green="60" red="51" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -65,7 +65,7 @@
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                          <Component id="jLabel22" min="-2" pref="151" max="-2" attributes="0"/>
+                          <Component id="jLabel22" min="-2" pref="178" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="468" max="-2" attributes="0"/>
@@ -76,7 +76,12 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="349" max="32767" attributes="0"/>
+                  <EmptySpace pref="250" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -96,12 +101,14 @@
                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="boton_registrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="boton_atras" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="202" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -109,6 +116,9 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="boton_atras">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Atras"/>
           </Properties>
           <Events>
@@ -117,6 +127,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="boton_registrar">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Registrar"/>
           </Properties>
           <Events>
@@ -173,19 +186,22 @@
               <Font name="Dialog" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sucursales &#x27a4;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+                <StringItem index="0" value="Seleccione la susursal"/>
+                <StringItem index="1" value="Sucursal 1"/>
+                <StringItem index="2" value="Sucursal 2"/>
+                <StringItem index="3" value="Sucursal 3"/>
               </StringArray>
             </Property>
           </Properties>
@@ -196,7 +212,7 @@
               <Font name="Dialog" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gerentes &#x27a4;"/>
           </Properties>
@@ -207,7 +223,7 @@
               <Font name="Dialog" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Trabajadores &#x27a4;"/>
           </Properties>
@@ -218,7 +234,7 @@
               <Font name="Dialog" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sucursal: &lt;SUCURSAL&gt;"/>
           </Properties>
@@ -229,9 +245,16 @@
               <Font name="Dialog" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Supervisores &#x27a4;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/1.jpg"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>
