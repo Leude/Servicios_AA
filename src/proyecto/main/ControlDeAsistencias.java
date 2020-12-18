@@ -1,12 +1,12 @@
 package proyecto.main;
 
-import proyecto.vista.LoginSistema;
+import proyecto.clases.principales.Controlador;
 
 public class ControlDeAsistencias {
 
     public static void main(String[] args) {
-        LoginSistema ls = new LoginSistema();
-        ls.setVisible(true);
+        Controlador control = new Controlador();
+        control.iniciar();
     }
 
 }

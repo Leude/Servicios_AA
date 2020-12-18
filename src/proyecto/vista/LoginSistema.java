@@ -3,10 +3,6 @@ package proyecto.vista;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Sammy Guergachi <sguergachi at gmail.com>
- */
 public class LoginSistema extends javax.swing.JFrame {
 
     public LoginSistema() {
