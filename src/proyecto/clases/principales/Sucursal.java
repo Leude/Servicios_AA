@@ -12,9 +12,7 @@ public class Sucursal {
     }
 
     public void setDireccion(String direccion) throws IllegalArgumentException  {
-        if(direccion == null){
-            throw new IllegalArgumentException();
-        }
+        
         this.direccion = direccion;
     }
 
@@ -34,9 +32,6 @@ public class Sucursal {
     }
 
     public void setNombre(String nombre) throws IllegalArgumentException  {
-        if(nombre == null){
-            throw new IllegalArgumentException();
-        }
         this.nombre = nombre;
     }
 
