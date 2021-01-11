@@ -276,7 +276,7 @@ public class FormularioEmpleado extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                         .addComponent(boton_consulta)
                         .addGap(44, 44, 44))
-                    .addGroup(RegistroLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
                         .addComponent(jScrollPane3)
                         .addContainerGap())))
         );
@@ -322,21 +322,22 @@ public class FormularioEmpleado extends javax.swing.JFrame {
                             .addComponent(boton_atras))
                         .addGap(60, 60, 60)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
+                    .addGroup(RegistroLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(boton_consulta)
                             .addComponent(dato_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
-                .addComponent(boton_remover)
-                .addContainerGap())
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(boton_remover)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(52, 52, 52))
         );
 
         getContentPane().add(Registro, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1151, 656));
+        setSize(new java.awt.Dimension(1151, 771));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -367,7 +368,7 @@ public class FormularioEmpleado extends javax.swing.JFrame {
         empleado.setCorreo(dato_correo.getText());
         empleado.setDireccion(dato_direccion.getText());
         empleado.setClave(dato_clave.getText());
-        empleado_bd.cambioEmpleado(empleado, tabla.getValueAt(tabla.getSelectedRow(), 0));
+        empleado_bd.cambioEmpleado(empleado, tabla.getValueAt(tabla.getSelectedRow(),0));
         this.mostrarBusquedaEmpleado();
 
     }//GEN-LAST:event_boton_cambiarActionPerformed

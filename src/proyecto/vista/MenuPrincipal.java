@@ -23,7 +23,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
         encabezado = new javax.swing.JPanel();
         titulo = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        boton_salir = new javax.swing.JButton();
         reporte_asistencias1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -138,9 +138,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Salir");
+        boton_salir.setBackground(new java.awt.Color(0, 0, 255));
+        boton_salir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        boton_salir.setText("Salir");
+        boton_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_salirActionPerformed(evt);
+            }
+        });
 
         reporte_asistencias1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         reporte_asistencias1.setForeground(new java.awt.Color(102, 102, 255));
@@ -175,7 +180,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(departamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(boton_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(48, 48, 48)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(reporte_asistencias, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -208,7 +213,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(96, 96, 96)
-                                .addComponent(jButton1))
+                                .addComponent(boton_salir))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(departamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,14 +284,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_reporte_asistencias1ActionPerformed
 
+    private void boton_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_salirActionPerformed
+        LoginSistema login = new LoginSistema();
+        login.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_boton_salirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton asignacion;
+    private javax.swing.JButton boton_salir;
     private javax.swing.JButton control_asistencias;
     private javax.swing.JButton departamentos;
     private javax.swing.JButton empleados;
     private javax.swing.JPanel encabezado;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton reporte_asistencias;
     private javax.swing.JButton reporte_asistencias1;

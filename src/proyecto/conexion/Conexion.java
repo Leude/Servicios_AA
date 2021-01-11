@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import oracle.jdbc.pool.OracleDataSource;
 
 public abstract class Conexion {
-    private static final String url="jdbc:oracle:thin:@//localhost:1521/XEPDB1";
+    private static final String url="jdbc:oracle:thin:@//Ricardo:1521/XEPDB1";
     private static final String user= "CA";
     private static final String password="123";
     protected static Connection conn;

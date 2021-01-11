@@ -58,5 +58,26 @@ public class AsistenciaBD extends Conexion {
         }
         return listaAsistidos;
     }
+    
+    public ArrayList<Asistencia> listarBusquedaDeAsistencia() {
+        String sql = "SELECT id_empleado, TO_CHAR((hora_entrada),'HH24:MI') HORA_ENTRADA, TO_CHAR((hora_salida),'HH24:MI') HORA_SALIDA FROM asistencia";
+        ArrayList<Asistencia> listaAsistidos = new ArrayList<>();
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                Asistencia asistencia = new Asistencia();
+                asistencia.setId_empleado(rs.getInt(1));
+                asistencia.setHora_entrada(rs.getString(2));
+                asistencia.setHora_salida(rs.getString(3));
+                listaAsistidos.add(asistencia);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "No se pudo listar, Ingrese correctamente el dia,mes y año");
+        }
+        return listaAsistidos;
+    }
+    
 
 }

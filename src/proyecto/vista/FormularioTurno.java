@@ -94,7 +94,7 @@ public class FormularioTurno extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(51, 51, 255));
         jLabel19.setText("Identificacion de Turno ➤");
 
-        tabla.setBackground(new java.awt.Color(204, 204, 255));
+        tabla.setBackground(new java.awt.Color(51, 51, 51));
         tabla.setForeground(new java.awt.Color(204, 204, 255));
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
